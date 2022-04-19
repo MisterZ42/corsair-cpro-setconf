@@ -1,6 +1,7 @@
 This is for forcing the configuration for a single fan on the Corsair Commander Pro.
 
-Usage:
+Usage
+=====
 
 ./corsair-cpro-setconf -f fannumber -m mode
 
@@ -11,3 +12,9 @@ mode can be:
 1: 3-pin (voltage controlled)
 2: 4-pin (pwm controlled)
 3: disconnect
+
+Compiling
+=========
+This needs hidapi installed.
+Clone the repository.
+Type "make"
