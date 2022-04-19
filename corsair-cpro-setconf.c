@@ -1,3 +1,8 @@
+// SPDX-License-Identifier: GPL-2.0-or-later
+/*
+ * corsair-cpro-setconf.c - Small tool for setting fan-config on Corsair Commander Pro
+ * Copyright (C) 2022 Marius Zachmann <mail@mariuszachmann.de>
+ */
 #include <getopt.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -106,10 +111,12 @@ int main(int argc, char* argv[])
 	res = hid_read(handle, buffer, 16);
 	if (res == -1) {
 		fprintf(stderr, "Could not read from device\n");
+		return -1;
 	}
 	if (buffer[0] != 0) {
 		fprintf(stderr, "Device error:\n");
 		printBuffer(buffer, 16);
+		return -1;
 	}
 
     return 0;
